@@ -17,6 +17,7 @@
 
   onDestroy(async () => {
     if(ws){
+      ws.close();
       ws.removeEventListener('open', onOpen);
       ws.removeEventListener('message', onMessage);
       ws.removeEventListener('close', onClose);
